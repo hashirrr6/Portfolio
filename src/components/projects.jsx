@@ -42,7 +42,7 @@ const Projects = () => {
        animate={{ scale: [2, 2, 1.2] }} // Zoom out first, then back in
        whileInView={{ opacity: 1, x: 0 }} // Animate to visible and centered
        transition={{ duration: 1, ease: 'easeOut' }} // Animation duration and easing
-       viewport={{ once: true }} // Only animate once
+       viewport={{ once: false }} // Only animate once
        className="text-5xl font-bold text-center mb-12 text-gray-400 tracking-widest"
        
       >
@@ -73,7 +73,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }} // Animate to visible, centered, and upright
             whileHover={{ scale: 1, rotate: 2 }} // Add hover animation
             transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }} // Staggered animation
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
             className="group relative overflow-hidden rounded-xl border border-gray-400 p-4 shadow-lg transform transition-all duration-500 hover:shadow-2xl"
             onMouseEnter={() => setHoveredId(project.id)}
             onMouseLeave={() => setHoveredId(null)}
@@ -118,7 +118,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 10 }} // Start slightly below
                     whileInView={{ opacity: 1, y: 0 }} // Animate to visible and centered
                     transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered animation
-                    viewport={{ once: true }} // Only animate once
+                    viewport={{ once: false }} // Only animate once
                     className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"
                   >
                     {tech}
