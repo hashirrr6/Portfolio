@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./port"
+// import Home from "./port"
 import "./index.css"
 import Homee from "./components/home";
 import Footer from "./components/footer";
@@ -9,7 +9,7 @@ import Projects from "./components/projects";
 
 function App(){
 return(<>
-  <Home/>
+  {/* <Home/> */}
   <Homee/>
   <Introduction/>
   <Projects/>
