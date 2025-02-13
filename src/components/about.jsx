@@ -4,7 +4,7 @@ import YourImage from '../assets/Hashir.jpeg'; // Replace with your image path
 
 const About = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <div id="about" className="max-w-6xl mx-auto px-4 py-16">
       {/* About Section */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8  ">
         {/* Text Section (Animated from Right) */}

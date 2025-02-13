@@ -7,5 +7,12 @@
 body {
   background-image: url('./assets/bg1.jpeg');
   /* background-size: cover;  */
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+font-weight: bolder;
+  font-style: normal;
   background-position: center; /* To center the background */
+}
+html {
+  scroll-behavior: smooth;
 }

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-scroll'; // Import Link from react-scroll
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,15 +45,30 @@ const Navbar = () => {
 
           {/* Main Navigation */}
           <div className="hidden md:flex gap-x-30 justify-evenly pointer-events-auto">
-            <a href="/projects" className="text-gray-400 hover:text-white transition-colors font-medium">
+            <Link
+              to="projects" // Scroll to Projects section
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white transition-colors font-medium"
+            >
               Projects
-            </a>
-            <a href="/about" className="text-gray-400 hover:text-white transition-colors font-medium">
+            </Link>
+            <Link
+              to="about" // Scroll to About section
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white transition-colors font-medium"
+            >
               About
-            </a>
-            <a href="/contact" className="text-gray-400 hover:text-white transition-colors font-medium">
+            </Link>
+            <Link
+              to="contact" // Scroll to Contact section
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white transition-colors font-medium"
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -59,15 +76,30 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="flex flex-col space-y-4 mt-4">
-              <a href="/projects" className="text-gray-400 hover:text-white transition-colors font-medium">
+              <Link
+                to="projects" // Scroll to Projects section
+                smooth={true}
+                duration={500}
+                className="text-gray-400 hover:text-white transition-colors font-medium"
+              >
                 Projects
-              </a>
-              <a href="/about" className="text-gray-400 hover:text-white transition-colors font-medium">
+              </Link>
+              <Link
+                to="about" // Scroll to About section
+                smooth={true}
+                duration={500}
+                className="text-gray-400 hover:text-white transition-colors font-medium"
+              >
                 About
-              </a>
-              <a href="/contact" className="text-gray-400 hover:text-white transition-colors font-medium">
+              </Link>
+              <Link
+                to="contact" // Scroll to Contact section
+                smooth={true}
+                duration={500}
+                className="text-gray-400 hover:text-white transition-colors font-medium"
+              >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         )}
