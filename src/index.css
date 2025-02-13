@@ -1,0 +1,11 @@
+/* Import tailwindcss first */
+@import "tailwindcss";
+
+/* Custom styles - Import your image before other styles */
+@import url('./assets/bg1.jpeg');
+
+body {
+  background-image: url('./assets/bg1.jpeg');
+  /* background-size: cover;  */
+  background-position: center; /* To center the background */
+}
