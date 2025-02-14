@@ -5,7 +5,7 @@ import CoffeeGuy from "../assets/intro.png"; // Replace with your image path
 export default function Introduction() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: "100%" }} // Start off-screen to the right
+      initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
       whileInView={{
         opacity: 1,
         x: "0%", // Move to the center (left)

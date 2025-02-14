@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
 import { motion } from 'framer-motion';
+import { FaDownload } from 'react-icons/fa'; // Import download icon from react-icons
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,6 +70,16 @@ const Navbar = () => {
             >
               Contact
             </Link>
+
+            {/* Download CV Button */}
+            <a
+              href="/Hashir_CV.pdf" // Replace with the path to your CV file
+              download="Hashir_CV.pdf" // Name of the downloaded file
+              className="text-gray-400 hover:text-white transition-colors font-medium flex items-center gap-2"
+            >
+              <span>CV</span>
+              <FaDownload className="w-4 h-4" /> {/* Download icon */}
+            </a>
           </div>
         </div>
 
@@ -100,6 +111,16 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+
+              {/* Download CV Button for Mobile */}
+              <a
+                href="/Hashir_CV.pdf" // Replace with the path to your CV file
+                download="Hashir_CV.pdf" // Name of the downloaded file
+                className="text-gray-400 hover:text-white transition-colors font-medium flex items-center gap-2"
+              >
+                <span>CV</span>
+                <FaDownload className="w-4 h-4" /> {/* Download icon */}
+              </a>
             </div>
           </div>
         )}
