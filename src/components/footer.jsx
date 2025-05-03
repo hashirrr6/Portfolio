@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Social Media Links */}
           <div className="flex space-x-6">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/hashirrr6"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors duration-300"
@@ -17,7 +17,7 @@ export default function Footer() {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/mohammed-hashir-c-7a9a79320"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors duration-300"
@@ -25,7 +25,7 @@ export default function Footer() {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:hashi3904@gamil.com"
               className="hover:text-blue-400 transition-colors duration-300"
             >
               <FaEnvelope size={24} />

@@ -1,134 +1,155 @@
-import React, { useState } from 'react'; 
-import { motion } from 'framer-motion'; 
-import Eco from '../assets/eco.jpeg'; 
-import Chat from '../assets/chat.jpeg'; 
-import Bud from '../assets/bud.jpeg';  
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import Eco from '../assets/eco.jpeg';
+import Chat from '../assets/chat.jpeg';
+import Bud from '../assets/bud.jpeg';
 
-const Projects = () => {   
-  const [hoveredId, setHoveredId] = useState(null);    
+const Projects = () => {
+  const [hoveredId, setHoveredId] = useState(null);
 
-  const projects = [     
-    {       
-      id: 1,       
-      title: 'E-Commerce Platform',       
-      description: 'A full-featured online shopping with cart management and payment integration',       
-      image: Eco,       
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],       
-      link: 'https://ecommerce.example.com',     
-    },     
-    {       
-      id: 2,       
-      title: 'Live Chat Application',       
-      description: 'Real-time messaging application with instant updates and user presence',       
-      image: Chat,       
-      tech: ['React', 'Node.js', 'Express', 'Tailwind'],       
-      link: 'https://chat.example.com',     
-    },     
-    {       
-      id: 3,       
-      title: 'Expense Tracker',       
-      description: 'Personal finance management tool with budget planning and expense analytics',       
-      image: Bud,       
-      tech: ['React', 'Express', 'Node.js', 'Tailwind'],       
-      link: 'https://budget.example.com',     
-    },   
-  ];    
+  const projects = [
+    {
+      id: 1,
+      title: 'E-Commerce Platform',
+      description: 'A full-featured online shopping with cart management and payment integration',
+      image: Eco,
+      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+      link: 'https://ecommerce.example.com',
+    },
+    {
+      id: 2,
+      title: 'Live Chat Application',
+      description: 'Real-time messaging application with instant updates and user presence',
+      image: Chat,
+      tech: ['React', 'Node.js', 'Express', 'Tailwind'],
+      link: 'https://chat.example.com',
+    },
+    {
+      id: 3,
+      title: 'Expense Tracker',
+      description: 'Personal finance management tool with budget planning and expense analytics',
+      image: Bud,
+      tech: ['React', 'Express', 'Node.js', 'Tailwind'],
+      link: 'https://budget.example.com',
+    },
+  ];
 
-  return (     
-    <div id="projects" className="max-w-6xl mx-auto px-4 py-16">      
-      {/* Animated Heading (Coming from Left) */}       
-      <motion.h2        
-        initial={{ opacity: 0, scale: 2 ,x:100}} // Start larger and off-screen        
-        animate={{ scale: [1,1.5, 2] }} // Zoom out first, then back in        
-        whileInView={{ opacity: 1, x: 0}} // Animate to visible and centered              
-        transition={{ duration: 1, ease: 'easeOut' }} // Animation duration and easing        
-        viewport={{ once: false }} // Only animate once        
-        className="text-4xl font-bold text-center mb-12 text-gray-400 tracking-widest"               
-      >        
-        <motion.span   
-          initial={{ y: 0 }} // Start at the original position   
-          animate={{ y: [-20, 0, -20] }} // Jump up and down   
-          transition={{     
-            duration: 2, // Duration of one jump     
-            ease: "easeOut", // Smooth easing     
-            repeat: Infinity, // Repeat indefinitely     
-            repeatType: "mirror", // Reverse the animation on repeat   
-          }}   
-          className="inline-block text-white text-7xl" >   
-          P 
-        </motion.span>         
-        ROJECTS       
-      </motion.h2>       
+  return (
+    <div className="w-full overflow-x-hidden">
+      <div id="projects" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, scale: 1.5 }}
+          animate={{ scale: [1, 1.3, 1.5], opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          viewport={{ once: false }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-400 tracking-widest"
+        >
+          <motion.span
+            initial={{ y: 0 }}
+            animate={{ y: [-10, 0, -10] }}
+            transition={{
+              duration: 2,
+              ease: 'easeOut',
+              repeat: Infinity,
+              repeatType: 'mirror',
+            }}
+            className="inline-block text-white text-5xl sm:text-6xl md:text-7xl"
+          >
+            P
+          </motion.span>
+          ROJECTS
+        </motion.h2>
 
-      {/* Grid Layout (Projects Coming from Right) */}       
-      <motion.div         
-        initial={{ opacity: 0, x: 300 }} // Start off-screen to the right         
-        whileInView={{ opacity: 1, x: 0 }} // Animate to visible and centered         
-        transition={{ duration:2, ease: 'easeInOut' }} // Animation duration and easing         
-        viewport={{ once: false }} // Only animate once         
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"       
-      >         
-        {projects.map((project, index) => (           
-          <motion.div             
-            key={project.id}             
-            initial={{ opacity: 0, x: 100, scale: 0.9, rotate: 20 }} // Start off to the right, slightly scaled down, and rotated             
-            whileInView={{ opacity: 1, x: 0, scale: 1, rotate: 0 }} // Animate to visible, centered, and upright             
-            whileHover={{ scale: 1.05, rotate: -2 }} // Add hover animation             
-            transition={{ duration: 0, delay: index * 0.2, ease: 'easeInOut' }} // Staggered animation             
-            className="group relative overflow-hidden rounded-xl border border-gray-400 p-4 shadow-lg transform transition-all duration-500 hover:shadow-2xl"             
-            onMouseEnter={() => setHoveredId(project.id)}             
-            onMouseLeave={() => setHoveredId(null)}           
-          >             
-            {/* Project Image */}             
-            <div className="relative h-48 overflow-hidden">               
-              <img                 
-                src={project.image}                 
-                alt={project.title}                 
-                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"               
-              />                
-              {/* Overlay */}               
-              <div                 
-                className={`absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-500 ${                   
-                  hoveredId === project.id ? 'opacity-100' : 'opacity-0'                 
-                }`}               
-              >                 
-                <div className="flex items-center justify-center h-full">                   
-                  <a                     
-                    href={project.link}                     
-                    target="_blank"                     
-                    rel="noopener noreferrer"                     
-                    className="px-6 py-2 bg-white text-gray-900 rounded-full font-medium transform transition-transform duration-500 hover:scale-105"                   
-                  >                     
-                    View Project                   
-                  </a>                 
-                </div>               
-              </div>             
-            </div>              
-            {/* Project Info */}             
-            <div className="p-6">               
-              <h3 className="text-xl font-bold text-gray-300 mb-2">{project.title}</h3>               
-              <p className="text-gray-400 mb-4">{project.description}</p>                
-              {/* Tech Stack */}               
-              <div className="flex flex-wrap gap-2">                 
-                {project.tech.map((tech, index) => (                   
-                  <motion.span                     
-                    key={index}                     
-                    initial={{ opacity: 0, y: 10 }} // Start slightly below                     
-                    whileInView={{ opacity: 1, y: 0 }} // Animate to visible and centered                     
-                    transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered animation                     
-                    viewport={{ once: false }} // Only animate once                     
-                    className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"                   
-                  >                     
-                    {tech}                   
-                  </motion.span>                 
-                ))}               
-              </div>             
-            </div>           
-          </motion.div>         
-        ))}       
-      </motion.div>     
-    </div>   
-  );   
-};  
+        {/* Project Grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, x: 150, rotate: 10, scale: 0.95 },
+                visible: { opacity: 1, x: 0, rotate: 0, scale: 1 },
+              }}
+              transition={{
+                duration: 1.5,
+                ease: 'easeInOut',
+              }}
+              whileHover={{ scale: 1.05, rotate: -2 }}
+              className="group relative overflow-hidden rounded-xl border border-gray-500 p-4 sm:p-5 shadow-md hover:shadow-2xl bg-gray-900"
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              {/* Project Image */}
+              <div className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-[240px] overflow-hidden rounded-lg">
+                <motion.img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  initial={{ scale: 1 }}
+                  whileInView={{ scale: 1.1 }}
+                  transition={{ duration: 1 }}
+                />
+                <div
+                  className={`absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-500 ${
+                    hoveredId === project.id ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 bg-white text-gray-900 rounded-full font-medium hover:scale-105 transition-transform"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-export default Projects; 
+              {/* Project Info */}
+              <motion.div
+                className="mt-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <h3 className="text-lg sm:text-xl font-bold text-gray-200 mb-2">{project.title}</h3>
+                <p className="text-gray-400 text-sm sm:text-base mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <motion.span
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      viewport={{ once: false }}
+                      className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-xs sm:text-sm"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
