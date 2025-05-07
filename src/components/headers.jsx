@@ -90,15 +90,14 @@ const Navbar = () => {
             className="flex-shrink-0 flex items-center p-2 relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", }}
-            >
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
               variants={shimmerVariants}
               initial="initial"
               animate="animate"
               style={{ opacity: 0.2 }}
-              transition={{repeat: Infinity }}
             />
             <motion.img
               src={Logo}

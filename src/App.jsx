@@ -11,6 +11,7 @@ import Contact from "./components/contact";
 function App() {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
+  
 
   useEffect(() => {
     // In Vite, environment variables are available through import.meta.env

@@ -13,24 +13,24 @@ export default function Homee() {
             I'm <span className="text-white">Hashir</span>
           </h1>
 
-          <div className="mt-2 text-3xl md:text-4xl font-bold text-gray-400">
-            <TypeAnimation
-              sequence={[
-                "Software Developer",
-                1000,
-                "MERN Stack Developer",
-                1000,
-                "Welcome to my website",
-                1000,
-                () => console.log("Sequence completed"),
-              ]}
-              wrapper="span"
-              cursor={true}
-              repeat={Infinity}
-              style={{ display: "inline-block" }}
-              aria-label="Introduction animation"
-            />
-          </div>
+          <div className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 whitespace-nowrap">
+  <TypeAnimation
+    sequence={[
+      "Software Developer",
+      1000,
+      "MERN Stack Developer",
+      1000,
+      "Welcome to my website",
+      1000,
+      () => console.log("Sequence completed"),
+    ]}
+    wrapper="span"
+    cursor={true}
+    repeat={Infinity}
+    style={{ display: "inline-block" }}
+    aria-label="Introduction animation"
+  />
+</div>
         </div>
 
         {/* Right Side: Aust Image */}
