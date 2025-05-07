@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "./index.css";
 import Navbar from "./components/headers";
 import Homee from "./components/home";
@@ -11,9 +10,16 @@ import Contact from "./components/contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    // Hide loader after 2.5 seconds
+    // In Vite, environment variables are available through import.meta.env
+    const authKey = import.meta.env.VITE_AUTH_KEY;
+    
+    if (authKey === 'my-super-secret') {
+      setAuthorized(true);
+    }
+
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2500);
@@ -21,9 +27,26 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  if (!authorized && !loading) {
+    return (
+      <div style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '24px',
+        fontWeight: 'bold',
+        color: 'red',
+        textAlign: 'center'
+      }}>
+        Access Denied<br />
+        Environment not authorized.
+      </div>
+    );
+  }
+
   return (
     <>
-      {/* Show loader while loading is true */}
       {loading ? (
         <div className="loader">
           <div className="cir1"></div>
@@ -33,7 +56,6 @@ function App() {
           <div className="cir5"></div>
         </div>
       ) : (
-        // Show actual content after loader disappears
         <>
           <Navbar />
           <Homee />
