@@ -7,32 +7,36 @@ import Bud from '../assets/bud.jpeg';
 const Projects = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-featured online shopping with cart management and payment integration',
-      image: Eco,
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-      link: 'https://ecommerce.example.com',
-    },
-    {
-      id: 2,
-      title: 'Live Chat Application',
-      description: 'Real-time messaging application with instant updates and user presence',
-      image: Chat,
-      tech: ['React', 'Node.js', 'Express', 'Tailwind'],
-      link: 'https://chat.example.com',
-    },
-    {
-      id: 3,
-      title: 'Expense Tracker',
-      description: 'Personal finance management tool with budget planning and expense analytics',
-      image: Bud,
-      tech: ['React', 'Express', 'Node.js', 'Tailwind'],
-      link: 'https://budget.example.com',
-    },
-  ];
+ const projects = [
+  {
+    id: 1,
+    title: 'Polosys ERP — E-commerce Module',
+    description:
+      'ERP-integrated B2B/B2C e-commerce module with product management, order workflows, and admin analytics. Optimized product synchronization and improved overall performance.',
+    image: Eco,
+    tech: ['React', 'Next.js', 'TypeScript', 'Firebase', 'REST APIs'],
+    link: 'https://polo-sys-eco.vercel.app', // or your portfolio case-study page
+  },
+  {
+    id: 2,
+    title: 'Polosys ERP — Ticketing System',
+    description:
+      'Customer support ticketing system with real-time tracking, multi-department workflows, and optimized UI performance for faster issue resolution.',
+    image: Chat,
+    tech: ['React', 'Next.js', 'TypeScript', 'REST APIs'],
+    link: 'https://polosys.com', // or case-study link
+  },
+  {
+    id: 3,
+    title: 'Polosys Books — Accounting & Billing SaaS',
+    description:
+      'Cloud-based accounting system inspired by Zoho Books. Built frontend modules for invoices, clients, expenses, and analytics dashboards with role-based access.',
+    image: Bud,
+    tech: ['Next.js', 'TypeScript', 'Redux', 'MongoDB', 'REST APIs'],
+    link: 'https://hashirrr.netlify.app', // portfolio page
+  },
+];
+
 
   return (
     <div className="w-full overflow-x-hidden">
