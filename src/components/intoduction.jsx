@@ -62,13 +62,24 @@ export default function Introduction() {
     },
   };
 
+   // Floating animation for continuous subtle movement
+  const floatingAnimation = {
+    float: {
+      y: [0, -8, 0],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
   return (
   <motion.div
     initial={{ opacity: 0, x: isDesktop ? 100 : 0 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 1.2, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 py-16 md:py-20 relative"
+    className="flex flex-col-reverse md:flex-row items-center justify-evenly px-6 md:px-16 py-16 md:py-20 relative"
   >
     {/* Text Section */}
     <div className="text-white max-w-xl text-center md:text-left">
@@ -165,22 +176,39 @@ export default function Introduction() {
     </div>
 
     {/* Image Section */}
-    <motion.div
-      variants={isDesktop ? imageAnimationDesktop : imageAnimationMobile}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: false, amount: 0.2 }}
-      className="w-60 md:w-[350px] mb-10 md:mb-0"
-    >
-      <img src={CoffeeGuy} alt="Developer illustration with coffee" className="w-full h-auto" />
+      <motion.div
+        variants={isDesktop ? imageAnimationDesktop : imageAnimationMobile}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="w-40 md:w-64 lg:w-72 mb-6 md:mb-0 md:ml-4 lg:ml-6 relative"
+      >
+        {/* Floating animation container */}
+        <motion.div
+          variants={floatingAnimation}
+          animate="float"
+          className="relative"
+        >
+          {/* Subtle glow effect */}
+          <div className="relative">
+            <div className="absolute -inset-3 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-md" />
+            <img 
+              src={CoffeeGuy} 
+              alt="Developer illustration with coffee" 
+              className="relative w-full h-auto rounded-xl shadow-lg shadow-purple-500/10" 
+            />
+          </div>
+          
+          {/* Subtle coffee steam effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 0.6, y: -15 }}
+            transition={{ delay: 1, duration: 2, repeat: Infinity, repeatDelay: 0.5 }}
+            className="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-b from-white/20 to-transparent rounded-full blur-[2px]"
+          />
+        </motion.div>
+      </motion.div>
     </motion.div>
-
-    {/* Background Effect */}
-    <div
-      className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-10 z-[-1]"
-      style={{ backgroundImage: "url('/path-to-space-background.png')" }}
-    />
-  </motion.div>
 );
 
 }

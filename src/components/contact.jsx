@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Png from "../assets/con.png"; // Check your path!
+import Png from "../assets/vibee.png"; // Check your path!
 import { Send } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
