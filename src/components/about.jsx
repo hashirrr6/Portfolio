@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import YourImage from '../assets/Hashir.jpeg'; // Replace with your image path
+import YourImage from '../assets/hashirrr6.jpg'; // Replace with your image path
 
 const About = () => {
 return (
