@@ -10,12 +10,12 @@ const Projects = () => {
  const projects = [
   {
     id: 1,
-    title: 'Polosys ERP — E-commerce Module',
+    title: 'Polosys Books — Accounting & Billing SaaS',
     description:
-      'ERP-integrated B2B/B2C e-commerce module with product management, order workflows, and admin analytics. Optimized product synchronization and improved overall performance.',
-    image: Eco,
-    tech: ['React', 'Next.js', 'TypeScript', 'Firebase', 'REST APIs'],
-    link: 'https://polo-sys-eco.vercel.app', // or your portfolio case-study page
+      'Cloud-based accounting system inspired by Zoho Books. Built frontend modules for invoices, clients, expenses, and analytics dashboards with role-based access.',
+    image: Bud,
+    tech: ['Next.js', 'TypeScript', 'Redux', 'MongoDB', 'REST APIs'],
+    link: 'https://web.polosysbooks.com/',
   },
   {
     id: 2,
@@ -24,18 +24,19 @@ const Projects = () => {
       'Customer support ticketing system with real-time tracking, multi-department workflows, and optimized UI performance for faster issue resolution.',
     image: Chat,
     tech: ['React', 'Next.js', 'TypeScript', 'REST APIs'],
-    link: 'https://polosys.com', // or case-study link
+    link: 'https://polosys.com',
   },
   {
     id: 3,
-    title: 'Polosys Books — Accounting & Billing SaaS',
+    title: 'Polosys ERP — E-commerce Module',
     description:
-      'Cloud-based accounting system inspired by Zoho Books. Built frontend modules for invoices, clients, expenses, and analytics dashboards with role-based access.',
-    image: Bud,
-    tech: ['Next.js', 'TypeScript', 'Redux', 'MongoDB', 'REST APIs'],
-    link: 'https://hashirrr.netlify.app', // portfolio page
+      'ERP-integrated B2B/B2C e-commerce module with product management, order workflows, and admin analytics. Optimized product synchronization and improved overall performance.',
+    image: Eco,
+    tech: ['React', 'Next.js', 'TypeScript', 'Firebase', 'REST APIs'],
+    link: 'https://polo-sys-eco.vercel.app',
   },
 ];
+
 
 
   return (
