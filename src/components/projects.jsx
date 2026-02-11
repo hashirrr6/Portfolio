@@ -3,22 +3,34 @@ import { motion } from 'framer-motion';
 import Eco from '../assets/eco.jpeg';
 import Chat from '../assets/chat.jpeg';
 import Bud from '../assets/bud.jpeg';
+import EventDeck from '../assets/EventDeck.png';
+
 
 const Projects = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
  const projects = [
-  {
+   {
     id: 1,
     title: 'Polosys Books — Accounting & Billing SaaS',
     description:
-      'Cloud-based accounting system inspired by Zoho Books. Built frontend modules for invoices, clients, expenses, and analytics dashboards with role-based access.',
-    image: Bud,
-    tech: ['Next.js', 'TypeScript', 'Redux', 'MongoDB', 'REST APIs'],
-    link: 'https://web.polosysbooks.com/',
+      'ERP-integrated B2B/B2C e-commerce module with product management, order workflows, and admin analytics. Optimized product synchronization and improved overall performance.',
+    image: Eco,
+    tech: ['React', 'Next.js', 'TypeScript', 'Firebase', 'REST APIs'],
+    link: 'https://polo-sys-eco.vercel.app', // or your portfolio case-study page
   },
+    {
+  id: 2,
+  title: 'EventDeck — Event Management Platform',
+  description:
+    'Modern event management web application for creating, managing, and booking events. Includes event listings, user registration, admin controls, and responsive UI for seamless user experience.',
+  image: EventDeck, // You can replace with a new image like EventDeck if you have one
+  tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'REST APIs'],
+  link: 'https://eventdeck.netlify.app',
+},
+
   {
-    id: 2,
+    id: 3,
     title: 'Polosys ERP — Ticketing System',
     description:
       'Customer support ticketing system with real-time tracking, multi-department workflows, and optimized UI performance for faster issue resolution.',
@@ -28,13 +40,15 @@ const Projects = () => {
   },
   {
     id: 3,
-    title: 'Polosys ERP — E-commerce Module',
+    title: 'Polosys Books — Accounting & Billing SaaS',
     description:
-      'ERP-integrated B2B/B2C e-commerce module with product management, order workflows, and admin analytics. Optimized product synchronization and improved overall performance.',
-    image: Eco,
-    tech: ['React', 'Next.js', 'TypeScript', 'Firebase', 'REST APIs'],
-    link: 'https://polo-sys-eco.vercel.app',
+      'Cloud-based accounting system inspired by Zoho Books. Built frontend modules for invoices, clients, expenses, and analytics dashboards with role-based access.',
+    image: Bud,
+    tech: ['Next.js', 'TypeScript', 'Redux', 'MongoDB', 'REST APIs'],
+    link: 'https://hashirrr.netlify.app', // portfolio page
   },
+
+
 ];
 
 
