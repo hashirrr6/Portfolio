@@ -1,17 +1,21 @@
 import React from 'react';
-import Typewriter from  'typewriter-effect';
+import { TypeAnimation } from 'react-type-animation';
 
 const Typed = () => {
   return (
     <div className="TypeEffect">
-      <Typewriter
-        options={{
-          strings: ['Software Developer', 'MERN Stack Developer'],
-          autoStart: true,
-          loop: true,
-          delay: 70,
-          deleteSpeed:20,
-        }}
+      <TypeAnimation
+        sequence={[
+          'Software Developer',
+          2000,
+          'MERN Stack Developer',
+          2000,
+        ]}
+        wrapper="span"
+        cursor={true}
+        repeat={Infinity}
+        speed={50}
+        deletionSpeed={60}
       />
     </div>
   )
